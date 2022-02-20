@@ -11,18 +11,18 @@ else{
     console.log("number is not a paldirom number");
 }
 
-///Without using string functions
-let len = text.length;
-for(let i = 0;i<len/2;i++)
+const str = "MADAM";
+console.log(checkPalidrom(str));
+function checkPalidrom(str)
 {
-    if(text[i] == text[len-i-1])
-    {
-        var msg ="palidrom ";
-    }
-    else
-    {
-        var msg ="not a paldirom ";
-    }
+   let len =  str.length;
+   let msg;
+   for(let i = 0; i<len/2;i++)
+   {
+  
+   (str[i]===str[len-1-i])? msg =`${str} is a Palindrom`:  msg =`${str} is a not a Palindrom`;
+   
+   }
+   return msg;
 }
 
-console.log(msg);
