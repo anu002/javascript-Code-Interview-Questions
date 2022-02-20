@@ -24,3 +24,21 @@ array.flat(4);
     return Flat;
      
  }
+
+///Method 3
+
+const array = [1,[3,7,[8,9]],[7]];
+ console.log(flattenArray(array));
+ function flattenArray(array)
+ {
+ let flat = [];
+   array.forEach((element) => {
+   Array.isArray(element) ? 
+   flat = flat.concat(flattenArray(element))
+   :flat.push(element);
+   
+   
+   })
+  
+     return flat;
+ }
