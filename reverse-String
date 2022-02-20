@@ -1,0 +1,23 @@
+//Reverse a string 
+
+const str = "javascript";
+//Ist way
+//console.log(str.split('').reverse().join(''));
+//2nd Way
+//console.log([...str].reverse().join(''));
+
+//3rd way
+const reverseString = [...str].reduceRight((acc,curr) => {
+  acc.push(curr);
+ return acc;
+},[]);
+//console.log(reverseString.join(''));
+
+//4th way with loop
+let stringT =[];
+for(let i =str.length-1; i>=0;i--)
+{
+ stringT += str[i] ;
+  
+}
+console.log(stringT);
