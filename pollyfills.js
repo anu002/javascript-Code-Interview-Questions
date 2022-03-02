@@ -52,3 +52,46 @@ Function.prototype.Mybind = function(...args)
 }
 let obj2 = printName.Mybind(name,'kolkata');
 obj2("cold");
+
+
+const person = {
+  name: "ABC",
+  age:"12"
+  }
+ let details = function(place)
+  {
+    console.log(`hi ${this.name} your age is ${this.age} place ${place}`);
+  
+  }
+
+const Emp ={
+name:"Emp1",
+age:30
+}
+
+const {name:k,age} = person;
+
+let emp1 = details.bind(Emp);
+//details.call(person);
+//emp1();
+
+
+/* Function.prototype.Mybind = function(...args){
+console.log(this);
+let fn = this;
+return function()
+{
+fn.call(args[0],args[1])
+ 
+}
+} */
+Function.prototype.MyCall = function(fn,...args){
+ fn._this  = this;
+return fn._this(...args);
+ 
+
+}
+ details.MyCall(Emp,'bang');
+//let emp2 = details.Mybind(Emp,'bangalore');
+//emp2();
+
