@@ -1,0 +1,10 @@
+
+// Write a function that returns the number of zeros in a given array?
+
+let noOfZeros = (arr) =>{
+
+  const data = arr.filter((val) => (val===0) )
+  return data.length;
+}
+
+console.log(noOfZeros([1, 2, 0, 0, 5]));
